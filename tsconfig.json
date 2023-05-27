@@ -19,5 +19,5 @@
   },
   "include": [
     "src/**/*"
-, "out/app.js"  ]
+, "out/app.js", "tests"  ]
 }
