@@ -12,12 +12,9 @@ app.use('/v1', routes);
 app.use('/v1/auth', authRouter);
 app.use('/v2/places', placeRouter);
 
-const server = app.listen(0, () => {
-  const address = server.address();
-  if (address && typeof address !== 'string') {
-    const port = address.port;
-    console.log(`Servidor rodando em http://localhost:${port}`);
-  }
+const port = 5678;
+const server = app.listen(port, () => {
+  console.log(`Servidor rodando em http://localhost:${port}`);
 });
 
 export default app;

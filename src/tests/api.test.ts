@@ -1,5 +1,5 @@
 import request from 'supertest';
-import app  from '../src/app';
+import app  from '../app';
 
 describe('Testes da API', () => {
   it('Deve retornar a mensagem de boas-vindas ao acessar a rota GET /v1/', async () => {

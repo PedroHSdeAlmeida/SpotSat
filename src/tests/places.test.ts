@@ -1,5 +1,5 @@
 import request from 'supertest';
-import app from '../src/app';
+import app from '../app';
 
 describe('GET /v2/places', () => {
   test('Deve retornar uma lista de lugares', async () => {
