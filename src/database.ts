@@ -35,5 +35,19 @@ export default class BD {
     await this.cliente.end();
   }
   
+  async getPlaces() {
+    await this.conectar();
+    const result = await this.cliente.query('SELECT * FROM lugares');
+    await this.cliente.end();
+    return result.rows;
+  }
+  
+  async listarAreas() {
+    await this.conectar();
+    const result = await this.cliente.query('SELECT * FROM areas');
+    await this.cliente.end();
+    return result.rows;
+  }
+  
  
 }
