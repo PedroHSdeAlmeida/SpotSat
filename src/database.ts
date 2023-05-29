@@ -1,4 +1,5 @@
 import { Client } from 'pg';
+import Lugar from './model/place';
 
 export default class BD {
   private cliente: Client;
@@ -21,8 +22,11 @@ export default class BD {
     }
   }
 
-  async desconectar() {
-    await this.cliente.end()
+  async insertPlace(lugar: Lugar) {
+    await this.conectar();
+    await this.cliente.query('INSERT INTO lugares(nome, ponto) VALUES($1, ST_SetSRID(ST_MakePoint($2, $3), 4326))', [lugar.nome, lugar.ponto.coordinates[0], lugar.ponto.coordinates[1]]);
+    await this.cliente.end();
   }
+  
  
 }
